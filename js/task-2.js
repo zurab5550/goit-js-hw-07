@@ -1,15 +1,11 @@
-function checkAge(age) {
-  if (age > 18) {
-    return true
-  } else {
-    return confirm("А родители разрешили?")
-  }
+const ingredients = ["Картошка", "Грибы", "Чеснок", "Помидоры", "Зелень", "Приправы"]
+
+const ulMain = document.querySelector("#ingredients")
+
+for (let key in ingredients) {
+  let liMain = document.createElement("li")
+  liMain.textContent = ingredients[key]
+  ulMain.appendChild(liMain)
 }
 
-let age = prompt("Сколько вам лет?", 18)
-
-if (checkAge(age)) {
-  alert("Доступ получен")
-} else {
-  alert("Доступ закрыт")
-}
+console.log(ulMain)

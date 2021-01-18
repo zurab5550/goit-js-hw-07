@@ -1,9 +1,27 @@
-import users from "./users.js"
+const images = [
+  {
+    url:
+      "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url:
+      "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url:
+      "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
+  },
+]
 
-const getUsersWithGender = (users, gender) => {
+const listRef = document.getElementById("gallery")
+console.log(listRef)
+images.forEach((elem) => {
+  const createImage = `<li><image src="${elem.url}" alt="${elem.alt} width="300" height="300""</li>`
+  listRef.insertAdjacentHTML("beforeend", createImage)
+})
 
-const nameGender = users.filter(user=>user.gender===gender).map(user2=>user2.name)
-return nameGender;
-};
-
-console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+listRef.classList.add("list")
+listRef.classList.add("gallery-list")
