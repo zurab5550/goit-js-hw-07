@@ -1,8 +1,14 @@
-import users from "./users.js"
+let counterValue = 0 // значение счетчика
+let value = document.getElementById("value") // вывод данных
 
-const getInactiveUsers = users => {
-  const notActive = users.filter(user => user.isActive ===false)
-  return notActive;
-};
+const decrementBtn = document.getElementById("decrementBtn") // вычитание
+decrementBtn.onclick = function decrement() {
+  counterValue--
+  value.innerHTML = counterValue
+}
 
-console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+const incrementBtn = document.getElementById("incrementBtn") // сложение
+incrementBtn.onclick = function increment() {
+  counterValue++
+  value.innerHTML = counterValue
+}
